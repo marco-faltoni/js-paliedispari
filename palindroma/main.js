@@ -2,13 +2,10 @@
 
 
 // Questa versione con questa funzione restituisce la stringa ribaltata, e non mi dice se è true o false
-
+//
 // function palindrome(str) {
 //     return str.split("").reverse().join("");
 // }
-//
-// // la formula sopra è la versione abbeviata e concatenata della seguente
-//
 //
 // var risultato = palindrome("hello");
 // console.log(risultato);
@@ -27,8 +24,10 @@ var richiesta = prompt('Inserisci una parola e scopri se è palindroma');
 // richiamo la funzione e gli assegno la var con la parola che ho avuto
 if (palindrome(richiesta)) {
     // in questo caso la funzione mi ha restiuito una risultato true
-    console.log('il nome ' + richiesta +  ' che hai inserito è palindromo');
+    console.log('la parola ' + richiesta +  ' che hai inserito è palindroma');
+    document.getElementById('palindromo').innerHTML = 'la parola ' + richiesta +  ' che hai inserito è palindroma!';
 }  else {
     // in questo caso la funzione mi ha restiuito una risultato flase
-    console.log('il nome ' + richiesta +  ' che hai inserito non è palindromo');
+    console.log('la parola ' + richiesta +  ' che hai inserito non è palindroma');
+    document.getElementById('nonpalindromo').innerHTML = 'la parola ' + richiesta +  ' che hai inserito non è palindroma! Riprova.';
 }

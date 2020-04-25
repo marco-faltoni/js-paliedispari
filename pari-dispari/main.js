@@ -29,13 +29,15 @@ function isEven(numero) {
 // chiedo numero da 1 a 5 all'utente
 var giocata_utente = parseInt(prompt('Scegli un numero intero tra 1 e 5'));
 console.log("la giocata dell'utente è " + giocata_utente);
+document.getElementById('giocatautente').innerHTML = giocata_utente;
 
 // chiedo numero da 1 a 5 al computer tramite la funzione generaRandom
 var giocata_pc = generaRandom(1, 5);
 console.log('la giocata del pc è ' + giocata_pc);
+document.getElementById('giocatapc').innerHTML = giocata_pc;
 
 // chiedo all'utente pari o dispari
-var pari_disapri = prompt('Ora scegli: pari o dispari?');
+var pari_dispari = prompt('Ora scegli: pari o dispari?');
 
 // sommo i due numeri, giocata_pc e giocata_utente, con la funzione sommaNumeri e creo poi una var risultato_somma
 sommaNumeri(giocata_utente, giocata_pc);
@@ -46,18 +48,22 @@ console.log('la somma di ' + giocata_utente + ' e ' + giocata_pc + ' vale: ' + r
 var risultato_somma = isEven(risultato_somma);
 
 // scrivo le 4 soluzioni possibili
-if (risultato_somma == true && pari_disapri == 'pari'){
+if (risultato_somma == true && pari_dispari == 'pari'){
     console.log('Hai vinto');
+    document.getElementById('pari-vinto').innerHTML = 'Hai scelto pari, hai vinto!';
 }
 
-if (risultato_somma == true && pari_disapri == 'dispari') {
+if (risultato_somma == true && pari_dispari == 'dispari') {
     console.log('Hai perso');
+    document.getElementById('dispari-perso').innerHTML = 'Hai scelto dispari, hai perso! Riprova.';
 }
 
-if (risultato_somma == false && pari_disapri == 'dispari') {
+if (risultato_somma == false && pari_dispari == 'dispari') {
     console.log('Hai vinto');
+    document.getElementById('dispari-vinto').innerHTML = 'Hai scelto dispari, hai vinto!';
 }
 
-if  (risultato_somma == false && pari_disapri == 'pari') {
+if  (risultato_somma == false && pari_dispari == 'pari') {
     console.log('Hai perso');
+        document.getElementById('pari-perso').innerHTML = 'Hai scelto pari, hai perso! Riprova.';
 }
